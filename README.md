@@ -1,10 +1,10 @@
 
-# CoinDesk每日热门文章收集器 - 使用说明
+# 加密货币网站收集器 - 使用说明
 
 ## 📋 功能介绍
 
 这个程序可以自动：
-1. 从CoinDesk网站获取最新文章
+1. 从CoinDesk等加密货币网站获取最新文章
 2. 筛选出阅读量最高的3篇文章
 3. 将文章翻译成中文
 4. 保存为格式化的Word文档
@@ -120,47 +120,9 @@ top_articles = articles_sorted[:3]  # 改为你想要的数量
 - 更新python-docx库
 - 检查错误日志
 
-## 📊 高级功能
-
-### 定时任务
-
-使用Python的schedule库实现每天自动运行：
-
-```python
-import schedule
-import time
-
-def job():
-    # 运行收集器
-    main()
-
-# 每天早上9点运行
-schedule.every().day.at("09:00").do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(60)
-```
-
-### 发送邮件
-
-将生成的Word文档自动发送到邮箱：
-
-```python
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email import encoders
-
-def send_email(file_path):
-    # 配置邮件服务器
-    # 添加附件并发送
-    pass
-```
-
 ## 📜 许可证
 
-本程序仅供学习和个人使用，请遵守CoinDesk网站的使用条款。
+本程序仅供学习和个人使用。
 
 ## 🤝 贡献
 
